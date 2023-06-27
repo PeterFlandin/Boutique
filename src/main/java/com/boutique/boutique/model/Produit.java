@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Produit {
@@ -14,13 +13,11 @@ public class Produit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @NotNull
-    private String libellé;
-    @NotNull
+    private String libelle;
     private Double prixVente;
-    @NotNull
+
     private Double prixAchat;
-    @NotNull
+
     private Long quantiteStock;
 
     public Integer getId() {
@@ -31,12 +28,12 @@ public class Produit {
 	this.id = id;
     }
 
-    public String getLibellé() {
-	return this.libellé;
+    public String getLibelle() {
+	return this.libelle;
     }
 
-    public void setLibellé(String libellé) {
-	this.libellé = libellé;
+    public void setLibelle(String libelle) {
+	this.libelle = libelle;
     }
 
     public Double getPrixVente() {
@@ -70,7 +67,7 @@ public class Produit {
 
     @Override
     public int hashCode() {
-	return Objects.hash(id, libellé, prixAchat, prixVente, quantiteStock);
+	return Objects.hash(id, libelle, prixAchat, prixVente, quantiteStock);
     }
 
     @Override
@@ -82,14 +79,14 @@ public class Produit {
 	if (getClass() != obj.getClass())
 	    return false;
 	Produit other = (Produit) obj;
-	return Objects.equals(this.id, other.id) && Objects.equals(this.libellé, other.libellé)
+	return Objects.equals(this.id, other.id) && Objects.equals(this.libelle, other.libelle)
 		&& Objects.equals(this.prixAchat, other.prixAchat) && Objects.equals(this.prixVente, other.prixVente)
 		&& Objects.equals(this.quantiteStock, other.quantiteStock);
     }
 
     @Override
     public String toString() {
-	return "Produit [id=" + this.id + ", libellé=" + this.libellé + ", prixVente=" + this.prixVente + ", prixAchat="
+	return "Produit [id=" + this.id + ", libelle=" + this.libelle + ", prixVente=" + this.prixVente + ", prixAchat="
 		+ this.prixAchat + ", quantiteStock=" + this.quantiteStock + "]";
     }
 

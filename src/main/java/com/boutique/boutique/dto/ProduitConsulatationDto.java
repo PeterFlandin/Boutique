@@ -4,16 +4,19 @@ import java.util.Objects;
 
 public class ProduitConsulatationDto {
 
-    private String libellé;
+    private String libelle;
     private Double prixVente;
     private Long quantiteStock;
 
-    public String getLibellé() {
-	return this.libellé;
+    public ProduitConsulatationDto(Long quantiteStock2, String libelle, Double prixVente2) {
     }
 
-    public void setLibellé(String libellé) {
-	this.libellé = libellé;
+    public String getLibelle() {
+	return this.libelle;
+    }
+
+    public void setLibelle(String libelle) {
+	this.libelle = libelle;
     }
 
     public Double getPrixVente() {
@@ -34,7 +37,7 @@ public class ProduitConsulatationDto {
 
     @Override
     public int hashCode() {
-	return Objects.hash(libellé, prixVente, quantiteStock);
+	return Objects.hash(libelle, prixVente, quantiteStock);
     }
 
     @Override
@@ -46,13 +49,13 @@ public class ProduitConsulatationDto {
 	if (getClass() != obj.getClass())
 	    return false;
 	ProduitConsulatationDto other = (ProduitConsulatationDto) obj;
-	return Objects.equals(this.libellé, other.libellé) && Objects.equals(this.prixVente, other.prixVente)
+	return Objects.equals(this.libelle, other.libelle) && Objects.equals(this.prixVente, other.prixVente)
 		&& Objects.equals(this.quantiteStock, other.quantiteStock);
     }
 
     @Override
     public String toString() {
-	return "ProduitConsulatationdTO [libellé=" + this.libellé + ", prixVente=" + this.prixVente + ", quantiteStock="
+	return "ProduitConsulatationdTO [libelle=" + this.libelle + ", prixVente=" + this.prixVente + ", quantiteStock="
 		+ this.quantiteStock + "]";
     }
 

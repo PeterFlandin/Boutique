@@ -2,26 +2,24 @@ package com.boutique.boutique.dto;
 
 import java.util.Objects;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public class ProduitDto {
-    @NotBlank(message = "obligatoire")
     @Size(min = 3, message = "3 lettre minimum et 10 maximum")
-    private String libellé;
-    @NotBlank(message = "obligatoire")
+    private String libelle;
     private Double prixVente;
-    @NotBlank(message = "obligatoire")
     private Double prixAchat;
-    @NotBlank(message = "obligatoire")
     private Long quantiteStock;
 
-    public String getLibellé() {
-	return this.libellé;
+    public ProduitDto(String libelle, Integer id, Double prixAchat2, Double prixVente2, Long quantiteStock2) {
     }
 
-    public void setLibellé(String libellé) {
-	this.libellé = libellé;
+    public String getLibelle() {
+	return this.libelle;
+    }
+
+    public void setLibelle(String libelle) {
+	this.libelle = libelle;
     }
 
     public Double getPrixVente() {
@@ -50,7 +48,7 @@ public class ProduitDto {
 
     @Override
     public int hashCode() {
-	return Objects.hash(libellé, prixAchat, prixVente, quantiteStock);
+	return Objects.hash(libelle, prixAchat, prixVente, quantiteStock);
     }
 
     @Override
@@ -62,7 +60,7 @@ public class ProduitDto {
 	if (getClass() != obj.getClass())
 	    return false;
 	ProduitDto other = (ProduitDto) obj;
-	return Objects.equals(this.libellé, other.libellé) && Objects.equals(this.prixAchat, other.prixAchat)
+	return Objects.equals(this.libelle, other.libelle) && Objects.equals(this.prixAchat, other.prixAchat)
 		&& Objects.equals(this.prixVente, other.prixVente)
 		&& Objects.equals(this.quantiteStock, other.quantiteStock);
     }

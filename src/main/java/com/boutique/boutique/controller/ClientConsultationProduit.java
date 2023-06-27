@@ -18,7 +18,7 @@ public class ClientConsultationProduit {
 
     @Autowired
     private ClientService clientService;
-    @Autowired
+
     private ProduitConsulatationDto produitConsulatationDto;
 
     @GetMapping
@@ -31,7 +31,7 @@ public class ClientConsultationProduit {
     public void commandeProduit(@PathVariable("id") Integer id) {
 
 	try {
-	    if (produitConsulatationDto.getQuantiteStock() != null) {
+	    if (produitConsulatationDto.getQuantiteStock() != null && produitConsulatationDto.getQuantiteStock() > 0) {
 		clientService.Commande(id);
 	    } else {
 		throw new RuntimeException(

@@ -21,6 +21,7 @@ import com.boutique.boutique.service.AdminService;
 @RestController
 @RequestMapping("admin/gestionBoutique/produit")
 public class ProduitController {
+
     @Autowired
     private AdminService produitService;
 
@@ -30,7 +31,7 @@ public class ProduitController {
 	return produitService.getProduits();
     }
 
-    @PostMapping("/Ajouter")
+    @PostMapping("/ajouter")
     @ResponseStatus(HttpStatus.CREATED)
     public void postProduit(@RequestBody ProduitDto request) {
 
